@@ -8,9 +8,9 @@ Copy-Item -Recurse C:\xampp\mysql\backup $Data
 $SubFolders = Get-ChildItem -Path $OldData -Directory
 ForEach($d in $SubFolders) {
     if($Ignore -Contains $d.Name) {
-        Write-Output "Skip "$d.FullName
+        Write-Output "Skip $d.FullName"
     } else {
-        Write-Output "Copy "$d.FullName
+        Write-Output "Copy $d.FullName"
         Copy-Item -Recurse $d.FullName $Data
     }
 }
